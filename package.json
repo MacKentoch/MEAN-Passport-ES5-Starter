@@ -1,0 +1,43 @@
+{
+  "name": "MEAN_Starter_ES5",
+  "version": "1.0.0",
+  "license": "MIT",
+  "authors": [
+    "Erwan DATIN"
+  ],
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "express-session": "~1.0.4",
+    "serve-favicon": "^2.2.0",
+    "debug": "~0.7.4",
+    "ejs": "~2.3.1",
+    "ejs-mate": "^2.1.0",
+    "passport": "~0.2.0",
+    "passport-local": "~1.0.0",
+    "mongoose": "~3.8.12",
+    "bcrypt-nodejs": "*",
+    "connect-flash": "*"
+  },
+  "devDependencies": {
+    "del": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-ignore": "^1.2.1",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jshint": "^1.10.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-wrap": "^0.11.0"
+  }
+}
