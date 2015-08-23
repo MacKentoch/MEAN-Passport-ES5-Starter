@@ -4,7 +4,9 @@ MEAN Starter (ES5 version)
 
 ##WHAT IS IT?
 
-This is a MEAN js starter
+This is a MEAN js starter written in ES5.
+It implements **passport authentification**.
+
 
 - ES5 version (server and client)
 - passport authentification
@@ -28,6 +30,11 @@ This is a MEAN js starter
    - `node server`
 
 ##DEVELOPER
+
+**Don't forget to configure your database setting and passport secrets when thinking about production :**
+- in ./server/config dir.
+
+
 
 1. default gulp task (build & watch)
    - `gulp`

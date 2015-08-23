@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var engine = require('ejs-mate');
 var flash = require('connect-flash');
 var debug = require('debug')('passport-mongo');
+var passportConfig = require('./server/config/passport');
 
 
 //passport
@@ -42,7 +43,7 @@ app.use(cookieParser());
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Configuring Passport
-app.use(expressSession({secret: 'mySecretKeyDontforgetToChange'}));
+app.use(expressSession({secret: passportConfig.passportSecret}));
 app.use(passport.initialize());
 app.use(passport.session());
 
