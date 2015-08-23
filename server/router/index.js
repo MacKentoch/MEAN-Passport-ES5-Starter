@@ -9,7 +9,10 @@ var isAuthenticated = function (req, res, next) {
 
 module.exports = function(app, passport){
 
-	//root / home / login / register / logout
-	app.use('/', require('./routes/signup')(passport, isAuthenticated));
+	// root /home (no authentication needed) 
+	app.use('/', require('./routes/home')(passport, isAuthenticated));
+	
+	// user/login / user/register / user/logout
+	app.use('/user', require('./routes/userProfile')(passport, isAuthenticated));
 	
 }
