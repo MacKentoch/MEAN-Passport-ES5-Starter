@@ -81,27 +81,6 @@
 		
  })();
 
-/**
- * application : core modules
- */ 
-;(function(){
-	'use strict';
-	
-	angular
-		.module(	'app.core', 	
-							[						
-								'duScroll',
-								'ngAnimate',
-								'toaster',
-								'ngPasswordStrength',
-								'validation.match',	
-								'ui.bootstrap',
-								'ngResource'
-							]
-				);
-
-})(); 
-
 ;(function(){
 	'user strict';
 	
@@ -150,6 +129,53 @@
 		
 })();
 /**
+ * application : core modules
+ */ 
+;(function(){
+	'use strict';
+	
+	angular
+		.module(	'app.core', 	
+							[						
+								'duScroll',
+								'ngAnimate',
+								'toaster',
+								'ngPasswordStrength',
+								'validation.match',	
+								'ui.bootstrap',
+								'ngResource'
+							]
+				);
+
+})(); 
+
+/**
+ * index view : main controller
+ */
+ ;(function(){
+	 
+	'use strict';
+	 
+	angular
+		.module('app.home.main.Controller', [])
+		.controller('HomeMainController', HomeMainController);
+		
+		
+		HomeMainController.$inject = [];		
+		function HomeMainController(){
+			
+			/* jshint validthis: true */
+			var HomeMainCtrl = this;
+			
+			HomeMainCtrl.isAnExample = true;
+			
+			
+		}
+		
+		
+ })();
+
+/**
  * index view : main controller
  */
  ;(function(){
@@ -183,32 +209,6 @@
 			// 		
 			// 	});
 			//}
-			
-		}
-		
-		
- })();
-
-/**
- * index view : main controller
- */
- ;(function(){
-	 
-	'use strict';
-	 
-	angular
-		.module('app.home.main.Controller', [])
-		.controller('HomeMainController', HomeMainController);
-		
-		
-		HomeMainController.$inject = [];		
-		function HomeMainController(){
-			
-			/* jshint validthis: true */
-			var HomeMainCtrl = this;
-			
-			HomeMainCtrl.isAnExample = true;
-			
 			
 		}
 		

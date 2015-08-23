@@ -3,8 +3,13 @@ var router = express.Router();
 
 module.exports = function (passport, isAuthenticated) {
 
-	/* GET /user/login/  */
+	/* GET /user/  */
 	router.get('/', function(req, res) {
+		res.render('user/login', { message: req.flash('message') });
+	});
+
+	/* GET /user/login/ (same as GET /user/) */
+	router.get('/login', function(req, res) {
 		res.render('user/login', { message: req.flash('message') });
 	});
 
