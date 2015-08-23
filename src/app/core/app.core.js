@@ -12,7 +12,8 @@
 								'toaster',
 								'ngPasswordStrength',
 								'validation.match',	
-								'ui.bootstrap'
+								'ui.bootstrap',
+								'ngResource'
 							]
 				);
 

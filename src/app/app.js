@@ -13,10 +13,12 @@
 								'app.core',
 								'app.config',
 								/*app modules :*/
+								'app.common.userAuthentification.Service',
+								'app.common.user.Service',
 								'app.index.main.Controller',
+								'app.home.main.Controller',
 								'app.login.main.Controller',
-								'app.register.main.Controller',
-								'app.home.main.Controller'					
+								'app.register.main.Controller'
 							]
 				); 
 

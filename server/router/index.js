@@ -13,6 +13,9 @@ module.exports = function(app, passport){
 	app.use('/', require('./routes/home')(passport, isAuthenticated));
 	
 	// user/login / user/register / user/logout
-	app.use('/user', require('./routes/userProfile')(passport, isAuthenticated));
+	app.use('/user', require('./routes/user.profile')(passport, isAuthenticated));
+	
+	// user/login / user/register / user/logout
+	//app.use('/api/user', require('./routes/apiUser')(passport, isAuthenticated));	
 	
 }

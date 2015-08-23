@@ -30,10 +30,12 @@
 								'app.core',
 								'app.config',
 								/*app modules :*/
+								'app.common.userAuthentification.Service',
+								'app.common.user.Service',
 								'app.index.main.Controller',
+								'app.home.main.Controller',
 								'app.login.main.Controller',
-								'app.register.main.Controller',
-								'app.home.main.Controller'					
+								'app.register.main.Controller'
 							]
 				); 
 
@@ -93,11 +95,99 @@
 								'toaster',
 								'ngPasswordStrength',
 								'validation.match',	
-								'ui.bootstrap'
+								'ui.bootstrap',
+								'ngResource'
 							]
 				);
 
 })(); 
+
+;(function(){
+	'user strict';
+	
+	angular
+		.module('app.common.user.Service', [])
+		.factory('User', User);
+		
+		User.$inject = []; 
+		
+		function User(){
+			var service = {
+				isAuthenticated : false,
+				id: '',
+				firstName: '',
+				lastName: '',
+				language: '',
+				dateRegistration: null					
+			};
+			return service;
+			
+				
+		}
+})();
+/**
+ * user authentification service
+ */
+;(function(){
+	
+	'use strict';
+	
+	angular
+		.module('app.common.userAuthentification.Service', [])
+		.factory('CommonUserAuthentificationService', CommonUserAuthentificationService);
+		
+		CommonUserAuthentificationService.$inject = ['$resource'];
+		
+		function CommonUserAuthentificationService($resource){
+		
+			return $resource('/api/user/:id', null,
+				{
+						'update': { method:'PUT' }
+				});
+				
+		}
+		
+		
+})();
+/**
+ * index view : main controller
+ */
+ ;(function(){
+	 
+	'use strict';
+	 
+	angular
+		.module('app.index.main.Controller', [])
+		.controller('IndexMainController', IndexMainController);
+		
+		IndexMainController.$inject = [
+				'CommonUserAuthentificationService',
+				'User'
+				];		
+		function IndexMainController(CommonUserAuthentificationService, User){
+			
+			/* jshint validthis: true */
+			var IndexMainCtrl = this;
+			
+			IndexMainCtrl.isAnExample = true;
+			IndexMainCtrl.currentUser = User;
+			
+			
+			
+			
+			
+			// function currentUser(){
+			// 	CommonUserAuthentificationService
+			// 		.get({id: 0})
+			// 		.$promise.then(function(){
+			// 		
+			// 	});
+			//}
+			
+		}
+		
+		
+ })();
 
 /**
  * index view : main controller
@@ -118,32 +208,6 @@
 			var HomeMainCtrl = this;
 			
 			HomeMainCtrl.isAnExample = true;
-			
-			
-		}
-		
-		
- })();
-
-/**
- * index view : main controller
- */
- ;(function(){
-	 
-	'use strict';
-	 
-	angular
-		.module('app.index.main.Controller', [])
-		.controller('IndexMainController', IndexMainController);
-		
-		
-		IndexMainController.$inject = [];		
-		function IndexMainController(){
-			
-			/* jshint validthis: true */
-			var IndexMainCtrl = this;
-			
-			IndexMainCtrl.isAnExample = true;
 			
 			
 		}
