@@ -31,5 +31,8 @@
     "angularjs-toaster": "~0.4.15",
     "ng-password-strength": "~0.2.1",
     "angular-validation-match": "~1.5.1"
+  },
+  "resolutions": {
+    "angular": "~1.4.4"
   }
 }
